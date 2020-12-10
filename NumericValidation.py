@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query, Path
 from fastapi.middleware.cors import CORSMiddleware
 import nest_asyncio
 from pyngrok import ngrok
