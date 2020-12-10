@@ -17,8 +17,8 @@ app.add_middleware(
 
 class Item(BaseModel):
     name: str
-    description: str = Field(None, title="Description of the item", max_length=250)
-    price: float = Field(..., gt=0, le=100, description="The price must be greater than zero and lesser than or equal to 100")
+    description: str = Field(None, title="Description of the item", max_length=250) #Validation
+    price: float = Field(..., gt=0, le=100, description="The price must be greater than zero and lesser than or equal to 100") # Validation
     tax: float = None
 
 
@@ -31,7 +31,7 @@ async def root():
     return {"message" : "Hello World"}
 
 @app.put("/items/{item_id}")
-async def update_item(*, item_id: int, item: Item = Body(..., embed=True, example={
+async def update_item(*, item_id: int, item: Item = Body(..., embed=True, example={ # as the name implies it is an example
             "name": "Foo",
             "description": "A very nice Item",
             "price": 35.4,
