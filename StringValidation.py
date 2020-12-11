@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import nest_asyncio
 from pyngrok import ngrok
 import uvicorn
+from typing import List
 
 app = FastAPI()
 
